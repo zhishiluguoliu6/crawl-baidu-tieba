@@ -156,3 +156,15 @@ scrapy打包是很费劲的，启动代码不能用常规的execute("scrapy craw
 3.搜索界面里的生成词云图，注意显示的词语数目、大小，还有字体文件  
 4.打包时，wordcloud会报错，需要在生成后的wordcloud文件夹里，复制stopwords这个文件进去，我直接在spec文件里的data操作了  
 5.scrapy没有设定ip跟UA，爬取指定贴吧的一页起码5分钟，如果想加快速度，得自己搞随机ip跟UA
+
+
+详细可见我的csdn专栏：https://blog.csdn.net/qq_38282706/column/info/41793
+#![image](https://github.com/zhishiluguoliu6/crawl-baidu-tieba/blob/master/%E5%9B%BE%E7%89%87/%E5%BC%80%E5%A7%8B.jpg)
+#![image](https://github.com/zhishiluguoliu6/crawl-baidu-tieba/blob/master/%E5%9B%BE%E7%89%87/%E8%B4%B4%E5%90%A7%E7%95%8C%E9%9D%A2.jpg)
+#![image](https://github.com/zhishiluguoliu6/crawl-baidu-tieba/blob/master/%E5%9B%BE%E7%89%87/%E5%B8%96%E5%AD%90%E7%95%8C%E9%9D%A2.jpg)
+#![image](https://github.com/zhishiluguoliu6/crawl-baidu-tieba/blob/master/%E5%9B%BE%E7%89%87/%E7%88%AC%E5%8F%96%E8%BF%9B%E5%BA%A6.jpg)
+#![image](https://github.com/zhishiluguoliu6/crawl-baidu-tieba/blob/master/%E5%9B%BE%E7%89%87/%E6%90%9C%E7%B4%A2.jpg)
+#![image](https://github.com/zhishiluguoliu6/crawl-baidu-tieba/blob/master/%E5%9B%BE%E7%89%87/%E7%94%9F%E6%88%90%E8%AF%8D%E4%BA%91%E5%9B%BE.jpg)
+
+
+
