@@ -27,41 +27,43 @@
   
   
   
-运行爬虫自动创建的文件：  
+#### 运行爬虫自动创建的文件：  
 config：tk界面填入的参数 贴吧名、页数范围等数据所存放的文件  
   
-### 爬取进度详情(文件夹) 
->>/the_spider_counts.json：记录此次爬取的理论item数量  
->>/TieBa_info.json：爬取贴吧时，记录所有帖子标题、发帖人等信息，用在treeview进度条上显示详情  
->>/TieZi_info.json：爬取单个帖子时，每爬完10页返回item时，记录其页数，用在treeview进度条上显示详情  
+###### 爬取进度详情(文件夹) 
+* /the_spider_counts.json：记录此次爬取的理论item数量  
+* /TieBa_info.json：爬取贴吧时，记录所有帖子标题、发帖人等信息，用在treeview进度条上显示详情  
+* /TieZi_info.json：爬取单个帖子时，每爬完10页返回item时，记录其页数，用在treeview进度条上显示详情  
   
   
-爬取某个贴吧记录(文件夹)  
-	/spider_TieBa.csv：爬取任务结束时，记录此次爬取的贴吧名、页数范围、帖子总数等  
-	/Large_TieZi.csv：爬取过程中，发现某个帖子页数超过100(只记录前100页），就会把该帖子的信息记录下来  
+###### 爬取某个贴吧记录(文件夹)  
+* /spider_TieBa.csv：爬取任务结束时，记录此次爬取的贴吧名、页数范围、帖子总数等  
+* /Large_TieZi.csv：爬取过程中，发现某个帖子页数超过100(只记录前100页），就会把该帖子的信息记录下来  
   
   
-爬取单个帖子记录(文件夹)  
-	/spider_tiezi.csv：爬取任务结束时，记录此次爬取帖子的页数范围、帖子总数、花费时间等  
+###### 爬取单个帖子记录(文件夹)  
+* /spider_tiezi.csv：爬取任务结束时，记录此次爬取帖子的页数范围、帖子总数、花费时间等  
   
 日志：只显示warning以上级别的信息  
   
   
-自写的py文件：  
+###### 自写的py文件：  
 begin.py：总开关，调用my_tk.py里的tk代码，启动tk界面，输入参数后，运行scrapy  
 my_tk.py：tkinter代码，包含爬取界面跟进度界面  
 search.py：tk代码，搜索页面  
 find_path：获取 搜索元素的路径(search调用)  
   
 tieba_log.py：存放各种所需工具的py文件  
-	    creat_dir：创建所需文件夹  
+```python
+	creat_dir：    创建所需文件夹  
     	Log_one_TieBa：爬取【贴吧】结束时记录  
     	Log_one_TieZi：爬取【帖子】结束时记录  
     	Log_Large_TieZi：爬取[贴吧]时，当前帖子页数>100，记录下该帖子  
-	    Open_csv：      csv文件写入  
+	Open_csv：      csv文件写入  
     	Open_json：     json文件读取、写入等  
     	Crawling_item_counts：记录理论要爬取item数目  
     	Record_Crawl：        记录返回item的信息(标题、发帖人等)  
+```
   
   
 爬取结果：  
