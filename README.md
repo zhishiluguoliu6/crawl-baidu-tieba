@@ -3,10 +3,10 @@
 
   
 ## 爬取指定贴吧思路：  
-1.进入该贴吧第N页-第M页，获取所有帖子的初始信息  
-2.分别进入每个帖子，先爬取楼层回复  
-3.根据tid（帖子id）、pid（楼层id），爬取各自的楼内楼  
-4.楼内楼爬完了，返回item，以tid为名保存json  
+1. 进入该贴吧第N页-第M页，获取所有帖子的初始信息  
+1. 分别进入每个帖子，先爬取楼层回复  
+1. 根据tid（帖子id）、pid（楼层id），爬取各自的楼内楼  
+1. 楼内楼爬完了，返回item，以tid为名保存json  
 #### 难点：  
 如果该帖子爬过了，那是直接重新爬取覆盖旧文件吗？如果该帖子的某些内容被删了，再爬取没有了，不是可惜吗？或者该帖子没有新回复，不是浪费时间吗?  
 --这部分真的折腾，我现实获取旧文件的内容，作为底子，然后爬取帖子，一旦是新楼层，就添加，楼层爬完后，再爬各自的楼内楼，一旦新的回复，就添加到对应的楼层  
@@ -19,10 +19,10 @@
   
   
 ## 本scrapy运行过程：  
-		》初始的begin.py   ，打开tk界面，输入各个参数，保存在config文件，点击运行  
-		》先进入pipeleines.py，调用open_spider，获取config里的数据，设定spider各个参数  
-		》回到spider.py，正式开始运行parse  
-		》程序结束时，再调用pipeleines.py的close_spider，log此次爬取日志  
+	》初始的begin.py   ，打开tk界面，输入各个参数，保存在config文件，点击运行  
+	》先进入pipeleines.py，调用open_spider，获取config里的数据，设定spider各个参数  
+	》回到spider.py，正式开始运行parse  
+	》程序结束时，再调用pipeleines.py的close_spider，log此次爬取日志  
   
   
   
@@ -48,7 +48,7 @@ config：tk界面填入的参数 贴吧名、页数范围等数据所存放的�
 * scrapy日志.log:只记录scrapy
 * 日志.log	   :运行时记录
   
-##### 自写的py文件：  
+## 自写的py文件：  
 * begin.py：总开关，调用my_tk.py里的tk代码，启动tk界面，输入参数后，运行scrapy  
 * my_tk.py：tkinter代码，包含爬取界面跟进度界面  
 * search.py：tk代码，搜索页面  
