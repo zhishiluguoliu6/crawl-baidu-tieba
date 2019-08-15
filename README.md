@@ -30,7 +30,7 @@
 运行爬虫自动创建的文件：  
 config：tk界面填入的参数 贴吧名、页数范围等数据所存放的文件  
   
-###爬取进度详情(文件夹)  
+###爬取进度详情(文件夹)  <br />  
 >>/the_spider_counts.json：记录此次爬取的理论item数量  
 >>/TieBa_info.json：爬取贴吧时，记录所有帖子标题、发帖人等信息，用在treeview进度条上显示详情  
 >>/TieZi_info.json：爬取单个帖子时，每爬完10页返回item时，记录其页数，用在treeview进度条上显示详情  
