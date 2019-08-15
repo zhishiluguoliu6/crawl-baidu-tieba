@@ -95,7 +95,8 @@ dict的格式如下：
     }  
   
 # 每一层楼的list  
-post_list=```[ #1楼  
+post_list=```python
+		[ #1楼  
                 {  
                  'page':      '所在页数',  
                  'author':    '发帖人',  
