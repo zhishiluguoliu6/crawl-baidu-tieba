@@ -77,28 +77,32 @@ tieba_log.py：存放各种所需工具的py文件
 	/···  
 注：每个帖子默认最多爬100页，每10页作为一个dict保存到json文件中，每个文件最多10行dict  
   
-dict的格式如下：  
-    tiezi= {'title':    '标题',  
-	'author':   '发帖人',  
-	'tid':      '帖子的编号',  
-	'reply_num':'回复数量',  
-	'last_reply_time':'最后回复时间',  
-	'last_reply_author':'最后回复人',  
-	'pages':          '共多少页', 
-	'post_list': #帖子里的具体内容，每一层楼  
+### dict的格式如下： 
+```python
+tiezi= 
+{'title':            '标题',  
+ 'author':           '发帖人',  
+ 'tid':              '帖子的编号',  
+ 'reply_num':        '回复数量',  
+ 'last_reply_time':  '最后回复时间',  
+ 'last_reply_author':'最后回复人',  
+ 'pages':            '共多少页', 
+ #帖子里的具体内容，每一层楼  
+ 'post_list': 
     ['1楼',  
-    '2楼',  
-   '3楼',  
-   '4楼',  
-   '.....',
+     '2楼',  
+     '3楼',  
+     '4楼',  
+     '.....',
     ]  
-    }  
+ }  
+ ```
   
-# 每一层楼的list  
+#### 每一层楼的list  
 ```python
 post_list=
 [ 
-	{  		#1楼  
+	{ #1楼  
 	 'page':       '所在页数',  
 	 'author':     '发帖人',  
 	 'floor':      '楼层',  
@@ -108,7 +112,7 @@ post_list=
 	 'voice':      '如果有语音的话，就有',  
 	 'comment_num':'楼内楼回复数量',  
 	 'comment_list':     #如果上面不为0，就有  
-			   ['回复1',  
+			['回复1',  
 			'回复2',  
 			'回复3']  
 	 },  
@@ -116,18 +120,22 @@ post_list=
 	 {'3楼'}  
 ]
 ```
-# 楼内楼  
-comment_list=```[#回复1  
-         {'page':      '所在楼内楼页数',  
+#### 楼内楼  
+```python
+comment_list=
+[	
+         {#回复1  
+	  'page':      '所在楼内楼页数',  
           'author':    '发帖人',  
-          'time':'回复时间',  
+          'time':      '回复时间',  
           'pid':       '该楼层的编号',  
           'content':   '回帖内容(包含了文字)',  
           'voice':     '如果有语音的话，就有',  
           },  
           {'回复2'},  
           {'回复3'},  
-	  ]  ```
+]  
+```
   
   
 ### 打包为exe文件：  
