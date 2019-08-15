@@ -156,17 +156,17 @@ comment_list=
 	* /simsun.ttc字体文件  
   
 ##### 注：  
-scrapy打包是很费劲的，启动代码不能用常规的execute("scrapy crawl XX".split())，得用scrapy的源代码CrawlerProcess(get_project_settings())  
+scrapy打包是很费劲的，启动代码不能用常规的execute("scrapy crawl XX".split())，得用scrapy的源代码```CrawlerProcess(get_project_settings())```
 还得scrapy配置文件，本次还有我写的几个py文件，如果用常规的打包方法，显得很笨拙，需要自己手动复制文件，所以我就用了spec来打包，通过data设定好要转移的文件，还设置为不需要控制台  
-最后只需输入命令：pyinstaller begin.spec即可  
+最后只需输入命令：```pyinstaller begin.spec```即可  
   
   
 ## 注意几点：  
-1.tk运行时，按动按钮，如果对于的回调函数没有执行完毕，整个程序都会卡住，所以我用了多进程运行scrapy，这样的话，就可以通过爬取进度tk看到爬取进度，而且还能中断程序(暂停做不到）  
-2.楼内楼的爬取，最多只有100页  
-3.搜索界面里的生成词云图，注意显示的词语数目、大小，还有字体文件  
-4.打包时，wordcloud会报错，需要在生成后的wordcloud文件夹里，复制stopwords这个文件进去，我直接在spec文件里的data操作了  
-5.scrapy没有设定ip跟UA，爬取指定贴吧的一页起码5分钟，如果想加快速度，得自己搞随机ip跟UA
+1. tk运行时，按动按钮，如果对于的回调函数没有执行完毕，整个程序都会卡住，所以我用了多进程运行scrapy，这样的话，就可以通过爬取进度tk看到爬取进度，而且还能中断程序(暂停做不到）  
+2. 楼内楼的爬取，最多只有100页  
+3. 搜索界面里的生成词云图，注意显示的词语数目、大小，还有字体文件  
+4. 打包时，wordcloud会报错，需要在生成后的wordcloud文件夹里，复制stopwords这个文件进去，我直接在spec文件里的data操作了  
+5. scrapy没有设定ip跟UA，爬取指定贴吧的一页起码5分钟，如果想加快速度，得自己搞随机ip跟UA
 
 
 详细可见我的csdn专栏：https://blog.csdn.net/qq_38282706/column/info/41793  
