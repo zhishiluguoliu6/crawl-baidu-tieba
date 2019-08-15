@@ -30,7 +30,7 @@
 运行爬虫自动创建的文件：  
 config：tk界面填入的参数 贴吧名、页数范围等数据所存放的文件  
   
-###爬取进度详情(文件夹)  <br />  
+### 爬取进度详情(文件夹) 
 >>/the_spider_counts.json：记录此次爬取的理论item数量  
 >>/TieBa_info.json：爬取贴吧时，记录所有帖子标题、发帖人等信息，用在treeview进度条上显示详情  
 >>/TieZi_info.json：爬取单个帖子时，每爬完10页返回item时，记录其页数，用在treeview进度条上显示详情  
@@ -78,13 +78,13 @@ tieba_log.py：存放各种所需工具的py文件
 注：每个帖子默认最多爬100页，每10页作为一个dict保存到json文件中，每个文件最多10行dict  
   
 dict的格式如下：  
-tiezi={'title':    '标题',  
+`tiezi={'title':    '标题',  
        'author':   '发帖人',  
        'tid':      '帖子的编号',  
        'reply_num':'回复数量',  
        'last_reply_time':'最后回复时间',  
        'last_reply_author':'最后回复人',  
-       'pages':          '共多少页',  
+       'pages':          '共多少页', 
    #帖子里的具体内容，每一层楼  
        'post_list': ['1楼',  
                      '2楼',  
@@ -92,10 +92,10 @@ tiezi={'title':    '标题',
                      '4楼',  
                      '.....'  
                      ]  
-   }  
+   }  '
   
 #每一层楼的list  
-post_list=[ #1楼  
+``post_list=[ #1楼  
                 {  
                  'page':      '所在页数',  
                  'author':    '发帖人',  
@@ -112,9 +112,9 @@ post_list=[ #1楼
                  },  
                  {'2楼'},  
                  {'3楼'}  
-                ]  
+                ]  `
 #楼内楼  
-comment_list=[#回复1  
+`comment_list=[#回复1  
          {'page':      '所在楼内楼页数',  
           'author':    '发帖人',  
           'time':'回复时间',  
@@ -125,10 +125,10 @@ comment_list=[#回复1
   
           {'回复2'},  
           {'回复3'},  
-        ]  
+	  ]  `````
   
   
-打包为exe文件：  
+### 打包为exe文件：  
   
 所需配置文件：    
 scrapy(文件夹)  
